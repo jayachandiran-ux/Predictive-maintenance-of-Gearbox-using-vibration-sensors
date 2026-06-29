@@ -2,33 +2,36 @@
 
 ## 📌 Project Overview
 
-Predictive maintenance is an Industry 4.0 approach that helps detect equipment faults before failure. In this project, vibration sensor data from a gearbox is analyzed to classify the gearbox condition as either **Healthy** or **Broken Tooth** using Machine Learning.
+Predictive Maintenance is an Industry 4.0 approach that helps detect equipment faults before they lead to unexpected machine failures. In this project, vibration sensor data collected from an industrial gearbox is analyzed to classify the gearbox condition as either **Healthy** or **Broken Tooth** using Machine Learning.
 
-This project demonstrates a complete predictive maintenance pipeline including feature extraction, data preprocessing, model training, evaluation, and visualization.
+The project demonstrates a complete end-to-end predictive maintenance workflow, including statistical feature extraction, exploratory data analysis, machine learning model development, evaluation, visualization, and model serialization.
 
 ---
 
 ## 🎯 Objectives
 
-- Analyze gearbox vibration signals.
-- Extract statistical features from sensor data.
-- Build a machine learning model to detect gearbox faults.
+- Analyze gearbox vibration sensor signals.
+- Extract statistical features from vibration data.
+- Build a machine learning model for gearbox fault classification.
 - Evaluate the model using standard classification metrics.
+- Save the trained model for future predictions.
 
 ---
 
 ## 📂 Dataset
 
-The dataset contains vibration signals collected from four sensors mounted on a gearbox under two operating conditions:
+The dataset consists of vibration signals collected from **four vibration sensors** mounted on a gearbox under two operating conditions.
 
-- Healthy Condition
-- Broken Tooth Condition
+### Operating Conditions
 
-Each vibration signal is processed to extract statistical features.
+- ✅ Healthy Gearbox
+- ⚠️ Broken Tooth Gearbox
+
+Each vibration signal is transformed into statistical features before training the machine learning model.
 
 ---
 
-## 🛠 Technologies Used
+## 🛠️ Technologies Used
 
 - Python
 - NumPy
@@ -42,88 +45,174 @@ Each vibration signal is processed to extract statistical features.
 
 ---
 
-## ⚙️ Workflow
+## ⚙️ Machine Learning Workflow
 
-1. Load vibration sensor data
-2. Data cleaning
-3. Feature extraction
-4. Create feature dataset
-5. Exploratory Data Analysis
+1. Import Libraries
+2. Load Dataset
+3. Data Cleaning
+4. Statistical Feature Extraction
+5. Exploratory Data Analysis (EDA)
 6. Train-Test Split
 7. Random Forest Classification
 8. Model Evaluation
-9. Save trained model
+9. Save Trained Model
 
 ---
 
-## 📊 Extracted Features
+## 📊 Statistical Features Extracted
 
-For each vibration channel:
+The following features were extracted from each vibration sensor channel:
 
 - Mean
 - Standard Deviation
-- Maximum
-- Minimum
-- RMS
+- Maximum Value
+- Minimum Value
+- Root Mean Square (RMS)
 - Kurtosis
 - Skewness
 
-Total Features: **28**
+### Total Features
+
+**28 Statistical Features**
 
 ---
 
 ## 🤖 Machine Learning Model
 
-Random Forest Classifier
+**Random Forest Classifier**
+
+The Random Forest algorithm was used to classify gearbox operating conditions based on the extracted vibration features.
 
 ---
 
-## 📈 Evaluation Metrics
+## 📈 Model Evaluation
 
-- Accuracy
+The trained model was evaluated using:
+
+- Accuracy Score
 - Classification Report
 - Confusion Matrix
 - ROC Curve
-- Feature Importance
+- Feature Importance Analysis
+
+---
+
+# 📷 Results
+
+## Confusion Matrix
+
+![Confusion Matrix](confusion_matrix.png)
+
+---
+
+## Feature Importance
+
+![Feature Importance](feature_importance.png)
+
+---
+
+## ROC Curve
+
+![ROC Curve](roc_curve.png)
+
+---
+
+## Correlation Heatmap
+
+![Correlation Heatmap](correlation_heatmap.png)
 
 ---
 
 ## 📁 Project Structure
 
 ```
-Predictive_Maintenance_Gearbox/
+Predictive-Maintenance-of-Gearbox-using-vibration-sensors
 │
-├── dataset/
-├── notebook.ipynb
+├── Predictive_maintenance_of_Gearbox_using_vibration_sensors.ipynb
 ├── gearbox_features.csv
 ├── gearbox_fault_model.pkl
-├── README.md
+├── confusion_matrix.png
+├── correlation_heatmap.png
+├── feature_importance.png
+├── roc_curve.png
 ├── requirements.txt
-└── images/
+└── README.md
 ```
 
 ---
 
 ## 🚀 Results
 
-The Random Forest classifier successfully distinguished healthy and faulty gearbox conditions on the extracted feature dataset.
+- Successfully extracted statistical features from industrial vibration sensor data.
+- Built a Random Forest classifier for gearbox fault detection.
+- Generated feature importance and performance visualizations.
+- Saved the trained model using Joblib.
+- Achieved excellent classification performance on the extracted feature dataset.
 
-> Note:
-> The extracted feature dataset contains a limited number of samples. Therefore, the obtained accuracy demonstrates the workflow and proof of concept rather than production-scale performance.
+> **Note:**  
+> The extracted feature dataset contains a limited number of samples. Therefore, the reported accuracy should be considered a proof of concept demonstrating the predictive maintenance workflow rather than a production-scale benchmark.
 
 ---
 
 ## 📚 Learning Outcomes
 
+Through this project, I gained practical experience in:
+
 - Industrial Predictive Maintenance
+- Statistical Signal Processing
 - Feature Engineering
-- Statistical Signal Analysis
+- Exploratory Data Analysis
 - Random Forest Classification
-- Machine Learning Workflow
+- Model Evaluation
 - Model Serialization using Joblib
+- End-to-End Machine Learning Workflow
 
 ---
 
-## 🙌 Acknowledgement
+## 📦 Installation
 
-This project was completed as part of the **UPSKILL Machine Learning Internship**, focusing on industrial predictive maintenance applications.
+Clone the repository:
+
+```bash
+git clone https://github.com/jayachandiran-ux/Predictive-maintenance-of-Gearbox-using-vibration-sensors.git
+```
+
+Install the required libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the notebook:
+
+```bash
+jupyter notebook
+```
+
+---
+
+## 📌 Future Improvements
+
+- Deep Learning-based Fault Detection
+- Real-time Gearbox Monitoring
+- IoT Sensor Integration
+- Web Dashboard using Streamlit
+- Deployment using Flask/FastAPI
+
+---
+
+## 🙏 Acknowledgement
+
+This project was completed as part of the **UPSKILL Machine Learning Internship**, focusing on industrial predictive maintenance using vibration sensor analysis and machine learning techniques.
+
+---
+
+## 👨‍💻 Author
+
+**Jayachandiran K**
+
+Artificial Intelligence & Data Science Student
+
+Passionate about Machine Learning, Data Science, and AI-powered Industrial Solutions.
+
+⭐ If you found this project useful, don't forget to Star this repository!
